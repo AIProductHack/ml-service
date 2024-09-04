@@ -1,0 +1,71 @@
+{
+    "$defs": {
+        "Overflow": {
+            "enum": [
+                "visible",
+                "hidden",
+                "scroll",
+                "auto"
+            ],
+            "title": "Overflow",
+            "type": "string"
+        }
+    },
+    "properties": {
+        "children": {
+            "items": {},
+            "title": "Children",
+            "type": "array"
+        },
+        "className": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Classname"
+        },
+        "overflowX": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/Overflow"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
+        "overflowY": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/Overflow"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
+        "overflow": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/Overflow"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        }
+    },
+    "required": [
+        "children"
+    ],
+    "title": "Scrollbar",
+    "type": "object"
+}

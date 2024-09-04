@@ -1,0 +1,75 @@
+{
+    "$defs": {
+        "CheckboxColor": {
+            "enum": [
+                "default",
+                "error"
+            ],
+            "title": "CheckboxColor",
+            "type": "string"
+        }
+    },
+    "properties": {
+        "label": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Label"
+        },
+        "checked": {
+            "default": false,
+            "title": "Checked",
+            "type": "boolean"
+        },
+        "disabled": {
+            "default": false,
+            "title": "Disabled",
+            "type": "boolean"
+        },
+        "color": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/CheckboxColor"
+                }
+            ],
+            "default": "default"
+        },
+        "multiple": {
+            "default": false,
+            "title": "Multiple",
+            "type": "boolean"
+        },
+        "value": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Value"
+        },
+        "className": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Classname"
+        }
+    },
+    "title": "Checkbox",
+    "type": "object"
+}
