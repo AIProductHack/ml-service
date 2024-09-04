@@ -1,0 +1,82 @@
+{
+    "$defs": {
+        "ButtonFill": {
+            "enum": [
+                "solid",
+                "outline",
+                "clear"
+            ],
+            "title": "ButtonFill",
+            "type": "string"
+        },
+        "ButtonSize": {
+            "enum": [
+                "m",
+                "s",
+                "xs"
+            ],
+            "title": "ButtonSize",
+            "type": "string"
+        },
+        "ButtonVariant": {
+            "enum": [
+                "primary",
+                "secondary",
+                "grey",
+                "black",
+                "success",
+                "warning",
+                "error",
+                "info"
+            ],
+            "title": "ButtonVariant",
+            "type": "string"
+        }
+    },
+    "properties": {
+        "variant": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/ButtonVariant"
+                }
+            ],
+            "default": "primary"
+        },
+        "size": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/ButtonSize"
+                }
+            ],
+            "default": "m"
+        },
+        "fill": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/ButtonFill"
+                }
+            ],
+            "default": "solid"
+        },
+        "content": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Content"
+        },
+        "children": {
+            "default": [],
+            "items": {},
+            "title": "Children",
+            "type": "array"
+        }
+    },
+    "title": "Button",
+    "type": "object"
+}

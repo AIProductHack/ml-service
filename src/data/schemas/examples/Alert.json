@@ -1,0 +1,53 @@
+{
+    "properties": {
+        "title": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Title"
+        },
+        "severity": {
+            "default": "success",
+            "enum": [
+                "success",
+                "error",
+                "warning",
+                "info"
+            ],
+            "title": "Severity",
+            "type": "string"
+        },
+        "className": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Classname"
+        },
+        "content": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Content"
+        }
+    },
+    "title": "Alert",
+    "type": "object"
+}

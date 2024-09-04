@@ -1,4 +1,3 @@
-import json
 import enum
 from pydantic import BaseModel
 
@@ -36,12 +35,4 @@ class Button(BaseModel):
     size: ButtonSize = ButtonSize.m
     fill: ButtonFill = ButtonFill.solid
     content: str | None = None
-
-
-if __name__ == "__main__":
-    print(
-        json.dumps(
-            Button.model_json_schema(mode="serialization"),
-            indent=4,
-        )
-    )
+    children: list[object] = list()
