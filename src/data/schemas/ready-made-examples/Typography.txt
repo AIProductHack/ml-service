@@ -1,0 +1,60 @@
+Заголовок первого уровня с красным цветом и дополнительным классом
+
+{
+    "properties": {
+        "variant": "Heading1",
+        "color": "red",
+        "className": "main-title",
+        "content": "Добро пожаловать!"
+    },
+    "title": "Typography",
+    "type": "object"
+}
+
+Подзаголовок второго уровня с зеленым цветом
+
+{
+    "properties": {
+        "variant": "Subheading2",
+        "color": "green",
+        "content": "Раздел 1"
+    },
+    "title": "Typography",
+    "type": "object"
+}
+
+Основной текст с полужирным шрифтом и без дополнительного класса
+
+{
+    "properties": {
+        "variant": "Body-Bold",
+        "content": "Это полужирный текст для основного содержания."
+    },
+    "title": "Typography",
+    "type": "object"
+}
+
+Подпись с моноширинным шрифтом и дополнительным классом
+
+{
+    "properties": {
+        "variant": "CaptionMono",
+        "color": "gray",
+        "className": "caption-text",
+        "content": "Подпись к изображению"
+    },
+    "title": "Typography",
+    "type": "object"
+}
+
+Текст дополнительного стиля с цветом и без контента
+
+{
+    "properties": {
+        "variant": "Additional-Bold",
+        "color": "purple",
+        "content": null
+    },
+    "title": "Typography",
+    "type": "object"
+}
