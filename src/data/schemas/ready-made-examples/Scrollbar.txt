@@ -1,0 +1,82 @@
+Scrollbar с прокруткой по обеим осям
+
+{
+    "properties": {
+        "children": [
+            "Контент 1",
+            "Контент 2",
+            "Контент 3"
+        ],
+        "className": "scrollbar-both",
+        "overflow": "scroll"
+    },
+    "title": "Scrollbar",
+    "type": "object"
+}
+
+Scrollbar с авто-прокруткой по оси Y
+
+{
+    "properties": {
+        "children": [
+            "Первый блок",
+            "Второй блок",
+            "Третий блок",
+            "Четвертый блок"
+        ],
+        "className": "scrollbar-auto-y",
+        "overflowY": "auto"
+    },
+    "title": "Scrollbar",
+    "type": "object"
+}
+
+Scrollbar с видимым содержимым без прокрутки
+
+{
+    "properties": {
+        "children": [
+            "Элемент 1",
+            "Элемент 2",
+            "Элемент 3"
+        ],
+        "className": "no-scroll",
+        "overflow": "visible"
+    },
+    "title": "Scrollbar",
+    "type": "object"
+}
+
+Scrollbar с прокруткой, скрытой по оси X
+
+{
+    "properties": {
+        "children": [
+            "Длинное содержимое для прокрутки",
+            "Еще больше содержимого"
+        ],
+        "className": "hide-scroll-x",
+        "overflowX": "hidden",
+        "overflowY": "scroll"
+    },
+    "title": "Scrollbar",
+    "type": "object"
+}
+
+Scrollbar с фиксированной прокруткой по оси X
+
+{
+    "properties": {
+        "children": [
+            "Строка 1",
+            "Строка 2",
+            "Строка 3",
+            "Строка 4"
+        ],
+        "className": "horizontal-scroll",
+        "overflowX": "scroll",
+        "overflowY": "hidden"
+    },
+    "title": "Scrollbar",
+    "type": "object"
+}
