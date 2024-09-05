@@ -1,0 +1,94 @@
+Dropdown с кнопкой среднего размера и дочерними элементами меню
+
+{
+    "properties": {
+        "disabled": false,
+        "className": "dropdown-menu",
+        "size": "m",
+        "children": [
+            "Элемент 1",
+            "Элемент 2",
+            "Элемент 3"
+        ],
+        "buttonChildren": [
+            "Открыть меню"
+        ]
+    },
+    "title": "Dropdown",
+    "type": "object"
+}
+
+Отключенный Dropdown с маленькой кнопкой и пустым меню
+
+{
+    "properties": {
+        "disabled": true,
+        "className": "dropdown-disabled",
+        "size": "s",
+        "children": [],
+        "buttonChildren": [
+            "Недоступно"
+        ]
+    },
+    "title": "Dropdown",
+    "type": "object"
+}
+
+Dropdown с кнопкой очень маленького размера и текстом внутри кнопки
+
+{
+    "properties": {
+        "disabled": false,
+        "className": "tiny-dropdown",
+        "size": "xs",
+        "children": [
+            "Опция 1",
+            "Опция 2"
+        ],
+        "buttonChildren": [
+            "Настройки"
+        ]
+    },
+    "title": "Dropdown",
+    "type": "object"
+}
+
+Dropdown с большим количеством дочерних элементов и стандартной кнопкой
+
+{
+    "properties": {
+        "disabled": false,
+        "className": "large-dropdown",
+        "size": "m",
+        "children": [
+            "Опция 1",
+            "Опция 2",
+            "Опция 3",
+            "Опция 4",
+            "Опция 5"
+        ],
+        "buttonChildren": [
+            "Выберите опцию"
+        ]
+    },
+    "title": "Dropdown",
+    "type": "object"
+}
+
+Простой Dropdown с одной опцией
+
+{
+    "properties": {
+        "disabled": false,
+        "className": "single-option-dropdown",
+        "size": "s",
+        "children": [
+            "Настройки"
+        ],
+        "buttonChildren": [
+            "Опции"
+        ]
+    },
+    "title": "Dropdown",
+    "type": "object"
+}
