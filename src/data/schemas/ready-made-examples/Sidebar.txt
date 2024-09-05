@@ -1,0 +1,93 @@
+Стандартная боковая панель с вертикальной ориентацией
+
+{
+    "properties": {
+        "variant": "default",
+        "orientation": "vertical",
+        "allowFavorites": false,
+        "isLoggedIn": true,
+        "systemName": "Система управления",
+        "userName": "Иван",
+        "userSurname": "Иванов",
+        "children": [
+            "Главная",
+            "Профиль",
+            "Настройки"
+        ]
+    },
+    "title": "Sidebar",
+    "type": "object"
+}
+
+Горизонтальная панель с кнопкой-бургером
+
+{
+    "properties": {
+        "variant": "burger",
+        "orientation": "horizontal",
+        "allowFavorites": true,
+        "isLoggedIn": false,
+        "children": [
+            "Вход",
+            "Регистрация"
+        ]
+    },
+    "title": "Sidebar",
+    "type": "object"
+}
+
+Вертикальная панель без имени пользователя
+
+{
+    "properties": {
+        "variant": "default",
+        "orientation": "vertical",
+        "allowFavorites": false,
+        "isLoggedIn": false,
+        "systemName": "Система аналитики",
+        "children": [
+            "Аналитика",
+            "Отчеты",
+            "Поддержка"
+        ]
+    },
+    "title": "Sidebar",
+    "type": "object"
+}
+
+Панель с избранными элементами и ориентацией горизонтально
+
+{
+    "properties": {
+        "variant": "default",
+        "orientation": "horizontal",
+        "allowFavorites": true,
+        "isLoggedIn": true,
+        "userName": "Анна",
+        "userSurname": "Петрова",
+        "children": [
+            "Избранное",
+            "Мои файлы",
+            "История"
+        ]
+    },
+    "title": "Sidebar",
+    "type": "object"
+}
+
+Минималистичная вертикальная панель без избранного
+
+{
+    "properties": {
+        "variant": "default",
+        "orientation": "vertical",
+        "allowFavorites": false,
+        "isLoggedIn": true,
+        "children": [
+            "Домашняя страница",
+            "О приложении"
+        ]
+    },
+    "title": "Sidebar",
+    "type": "object"
+}
