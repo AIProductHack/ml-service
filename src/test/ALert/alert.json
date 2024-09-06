@@ -1,0 +1,10 @@
+{
+    "properties": {
+        "title": "Произошла ошибка",
+        "severity": "error",
+        "className": "error-message",
+        "content": "Что-то пошло не так. Пожалуйста, попробуйте снова."
+    },
+    "title": "Alert",
+    "type": "object"
+}
