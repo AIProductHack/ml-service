@@ -1,0 +1,120 @@
+Добавь Box с отступами со всех сторон размером 16px, цветом фона "lightgray" и радиусом границ 8px
+{
+    "properties": {
+        "p": "16px",
+        "background": "lightgray",
+        "borderRadius": "8px",
+        "children": [],
+        "px": null,
+        "py": null,
+        "pt": null,
+        "pb": null,
+        "pl": null,
+        "pr": null,
+        "height": null,
+        "width": null,
+        "maxWidth": null,
+        "border": null,
+        "color": null,
+        "className": null,
+        "gap": null
+    },
+    "title": "Box",
+    "type": "object"
+}
+Добавь Box с горизонтальными отступами 20px, вертикальными отступами 10px, максимальной шириной 500px, и альтернативными стилями "custom-box"
+{
+    "properties": {
+        "px": "20px",
+        "py": "10px",
+        "maxWidth": "500px",
+        "className": "custom-box",
+        "children": [],
+        "p": null,
+        "pt": null,
+        "pb": null,
+        "pl": null,
+        "pr": null,
+        "background": null,
+        "height": null,
+        "width": null,
+        "border": null,
+        "color": null,
+        "borderRadius": null,
+        "gap": null
+    },
+    "title": "Box",
+    "type": "object"
+}
+Добавь Box с отступом сверху 30px, шириной 300px, цветом "blue", и кастомным значением отступов "var(--16-size)"
+{
+    "properties": {
+        "pt": "30px",
+        "width": "300px",
+        "color": "blue",
+        "gap": "var(--16-size)",
+        "children": [],
+        "p": null,
+        "px": null,
+        "py": null,
+        "pb": null,
+        "pl": null,
+        "pr": null,
+        "background": null,
+        "height": null,
+        "maxWidth": null,
+        "border": null,
+        "borderRadius": null,
+        "className": null
+    },
+    "title": "Box",
+    "type": "object"
+}
+Добавь Box с границей "1px solid black", высотой 150px, и отступом снизу 10px
+{
+    "properties": {
+        "border": "1px solid black",
+        "height": "150px",
+        "pb": "10px",
+        "children": [],
+        "p": null,
+        "px": null,
+        "py": null,
+        "pt": null,
+        "pl": null,
+        "pr": null,
+        "background": null,
+        "width": null,
+        "maxWidth": null,
+        "color": null,
+        "borderRadius": null,
+        "className": null,
+        "gap": null
+    },
+    "title": "Box",
+    "type": "object"
+}
+Добавь Box с альтернативными стилями "flex-container", с радиусом границ 12px и фоном "white"
+{
+    "properties": {
+        "className": "flex-container",
+        "borderRadius": "12px",
+        "background": "white",
+        "children": [],
+        "p": null,
+        "px": null,
+        "py": null,
+        "pt": null,
+        "pb": null,
+        "pl": null,
+        "pr": null,
+        "height": null,
+        "width": null,
+        "maxWidth": null,
+        "border": null,
+        "color": null,
+        "gap": null
+    },
+    "title": "Box",
+    "type": "object"
+}
