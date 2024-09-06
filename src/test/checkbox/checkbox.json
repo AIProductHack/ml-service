@@ -1,0 +1,13 @@
+{
+    "properties": {
+        "label": "Согласен с условиями",
+        "checked": true,
+        "disabled": false,
+        "color": "error",
+        "multiple": false,
+        "value": null,
+        "className": null
+    },
+    "title": "Checkbox",
+    "type": "object"
+}
