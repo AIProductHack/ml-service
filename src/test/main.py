@@ -48,12 +48,12 @@ def compare_lists(list1, list2, ignored_keys):
     return True
 
 # Пример использования:
-'''
 
-file1_path = "file1.json"
-file2_path = "file2.json"
-ignored_keys = ["id"]  # ключи, которые нужно игнорировать
-result = compare_json_files(file1_path, file2_path, ignored_keys)
-print("JSON файлы одинаковы" if result else "JSON файлы различаются")
+if __name__ == '__main__':
+    file1_path = "ml-service/src/test/card/card.json"
+    file2_path = "ml-service/src/test/box/box.json"
+    ignored_keys = ["id"]  # ключи, которые нужно игнорировать
+    result = compare_json_files(file1_path, file2_path, ignored_keys)
+    print("JSON файлы одинаковы" if result else "JSON файлы различаются")
 
-'''
+
