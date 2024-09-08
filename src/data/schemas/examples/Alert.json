@@ -1,4 +1,6 @@
 {
+    "title": "Alert",
+    "type": "object",
     "properties": {
         "title": {
             "anyOf": [
@@ -23,6 +25,9 @@
             "title": "Severity",
             "type": "string"
         },
+        ...
+    }
+}
         "className": {
             "anyOf": [
                 {
@@ -47,7 +52,5 @@
             "default": null,
             "title": "Content"
         }
-    },
-    "title": "Alert",
-    "type": "object"
+    }
 }
