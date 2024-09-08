@@ -1,0 +1,57 @@
+Добавь Alert с ошибкой и текстом "Произошла ошибка" и классом "error-message"
+{
+    "properties": {
+        "title": "Произошла ошибка",
+        "severity": "error",
+        "className": "error-message",
+        "content": "Что-то пошло не так. Пожалуйста, попробуйте снова."
+    },
+    "title": "Alert",
+    "type": "object"
+}
+
+Добавь Alert с предупреждением и текстом "Внимание! Проверьте данные", добавив класс "warning-alert" и описание "Некоторые данные некорректны"
+
+{
+    "properties": {
+        "title": "Внимание! Проверьте данные",
+        "severity": "warning",
+        "className": "warning-alert",
+        "content": "Некоторые данные некорректны. Проверьте введенную информацию."
+    },
+    "title": "Alert",
+    "type": "object"
+}
+Добавь Alert с успешным сообщением и текстом "Операция выполнена успешно" и классом "success-message"
+{
+    "properties": {
+        "title": "Операция выполнена успешно",
+        "severity": "success",
+        "className": "success-message",
+        "content": "Все данные были успешно сохранены."
+    },
+    "title": "Alert",
+    "type": "object"
+}
+Добавь Alert с информацией и текстом "Обновление завершено", добавив класс "info-alert" и дополнительное сообщение "Вы можете продолжить работу"
+{
+    "properties": {
+        "title": "Обновление завершено",
+        "severity": "info",
+        "className": "info-alert",
+        "content": "Вы можете продолжить работу. Все системы обновлены."
+    },
+    "title": "Alert",
+    "type": "object"
+}
+Добавь Alert с предупреждением без текста, но с классом "minimal-warning"
+{
+    "properties": {
+        "title": null,
+        "severity": "warning",
+        "className": "minimal-warning",
+        "content": "Это предупреждение не содержит заголовка."
+    },
+    "title": "Alert",
+    "type": "object"
+}

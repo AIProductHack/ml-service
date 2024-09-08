@@ -1,0 +1,11 @@
+{
+    "properties": {
+        "orientation": "vertical",
+        "indicatorSize": "m",
+        "indicatorStatus": "success",
+        "className": "card-success",
+        "children": []
+    },
+    "title": "Card",
+    "type": "object"
+}

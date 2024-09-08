@@ -1,0 +1,18 @@
+{
+    "properties": {
+        "variant": "primary",
+        "size": "m",
+        "fill": "solid",
+        "startIcon": "icon-send",
+        "content": "Отправить",
+        "className": "btn-primary",
+        "children": [],
+        "endBadge": null,
+        "startBadge": null,
+        "endIcon": null,
+        "iconButton": false,
+        "disabled": false
+    },
+    "title": "Button",
+    "type": "object"
+}

@@ -1,0 +1,23 @@
+{
+    "properties": {
+        "p": "16px",
+        "background": "lightgray",
+        "borderRadius": "8px",
+        "children": [],
+        "px": null,
+        "py": null,
+        "pt": null,
+        "pb": null,
+        "pl": null,
+        "pr": null,
+        "height": null,
+        "width": null,
+        "maxWidth": null,
+        "border": null,
+        "color": null,
+        "className": null,
+        "gap": null
+    },
+    "title": "Box",
+    "type": "object"
+}

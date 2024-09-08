@@ -1,0 +1,85 @@
+Добавь Card с вертикальной ориентацией, индикатором размера "m", статусом индикатора "success" и пользовательским классом "card-success"
+{
+    "properties": {
+        "orientation": "vertical",
+        "indicatorSize": "m",
+        "indicatorStatus": "success",
+        "className": "card-success",
+        "children": []
+    },
+    "title": "Card",
+    "type": "object"
+}
+Добавь Card с горизонтальной ориентацией, индикатором размера "l", статусом индикатора "warning", и элементами внутри карточки
+{
+    "properties": {
+        "orientation": "horizontal",
+        "indicatorSize": "l",
+        "indicatorStatus": "warning",
+        "className": null,
+        "children": [
+            {
+                "type": "Text",
+                "content": "Предупреждение"
+            },
+            {
+                "type": "Button",
+                "content": "Подробнее"
+            }
+        ]
+    },
+    "title": "Card",
+    "type": "object"
+}
+Добавь Card с вертикальной ориентацией, без индикатора, но с кастомным классом "custom-card" и текстом "Это карточка" внутри
+{
+    "properties": {
+        "orientation": "vertical",
+        "indicatorSize": null,
+        "indicatorStatus": null,
+        "className": "custom-card",
+        "children": [
+            {
+                "type": "Text",
+                "content": "Это карточка"
+            }
+        ]
+    },
+    "title": "Card",
+    "type": "object"
+}
+Добавь Card с горизонтальной ориентацией, индикатором размера "s", статусом индикатора "error", и элементами внутри карточки с пользовательским классом "error-card"
+{
+    "properties": {
+        "orientation": "horizontal",
+        "indicatorSize": "s",
+        "indicatorStatus": "error",
+        "className": "error-card",
+        "children": [
+            {
+                "type": "Text",
+                "content": "Произошла ошибка"
+            },
+            {
+                "type": "Button",
+                "content": "Попробовать снова"
+            }
+        ]
+    },
+    "title": "Card",
+    "type": "object"
+}
+Добавь Card с вертикальной ориентацией, индикатором размера "m", статусом индикатора "info", и без кастомного класса
+{
+    "properties": {
+        "orientation": "vertical",
+        "indicatorSize": "m",
+        "indicatorStatus": "info",
+        "className": null,
+        "children": []
+    },
+    "title": "Card",
+    "type": "object"
+}
+
+
