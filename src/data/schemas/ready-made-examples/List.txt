@@ -1,0 +1,70 @@
+Простой список с текстовыми элементами
+
+{
+    "properties": {
+        "children": [
+            "Элемент 1",
+            "Элемент 2",
+            "Элемент 3"
+        ],
+        "className": "simple-list"
+    },
+    "title": "List",
+    "type": "object"
+}
+
+Список с пользовательским классом и пустыми элементами
+
+{
+    "properties": {
+        "children": [
+            "Первый элемент",
+            "Второй элемент"
+        ],
+        "className": "custom-list"
+    },
+    "title": "List",
+    "type": "object"
+}
+
+Список без заданного класса
+
+{
+    "properties": {
+        "children": [
+            "Задача 1",
+            "Задача 2",
+            "Задача 3",
+            "Задача 4"
+        ],
+        "className": null
+    },
+    "title": "List",
+    "type": "object"
+}
+
+Список с пустым значением children
+
+{
+    "properties": {
+        "children": [],
+        "className": "empty-list"
+    },
+    "title": "List",
+    "type": "object"
+}
+
+Список с элементами и стандартным классом
+
+{
+    "properties": {
+        "children": [
+            "Первый элемент",
+            "Второй элемент",
+            "Третий элемент"
+        ],
+        "className": "standard-list"
+    },
+    "title": "List",
+    "type": "object"
+}

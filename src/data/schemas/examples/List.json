@@ -1,0 +1,24 @@
+{
+    "properties": {
+        "children": {
+            "default": [],
+            "items": {},
+            "title": "Children",
+            "type": "array"
+        },
+        "className": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Classname"
+        }
+    },
+    "title": "List",
+    "type": "object"
+}

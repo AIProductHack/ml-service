@@ -1,0 +1,95 @@
+Добавь кнопку с типом "primary", размером "m", заливкой "solid", иконкой слева, текстом "Отправить", и дополнительным CSS-классом "btn-primary"
+{
+    "properties": {
+        "variant": "primary",
+        "size": "m",
+        "fill": "solid",
+        "startIcon": "icon-send",
+        "content": "Отправить",
+        "className": "btn-primary",
+        "children": [],
+        "endBadge": null,
+        "startBadge": null,
+        "endIcon": null,
+        "iconButton": false,
+        "disabled": false
+    },
+    "title": "Button",
+    "type": "object"
+}
+Добавь кнопку с типом "warning", размером "s", заливкой "outline", иконкой справа, текстом "Удалить", и правым бейджем "!"
+{
+    "properties": {
+        "variant": "warning",
+        "size": "s",
+        "fill": "outline",
+        "endIcon": "icon-delete",
+        "content": "Удалить",
+        "endBadge": "!",
+        "children": [],
+        "startIcon": null,
+        "startBadge": null,
+        "className": null,
+        "iconButton": false,
+        "disabled": false
+    },
+    "title": "Button",
+    "type": "object"
+}
+Добавь кнопку-иконку без лейбла, тип "success", размер "xs", иконка слева
+{
+    "properties": {
+        "variant": "success",
+        "size": "xs",
+        "fill": "solid",
+        "startIcon": "icon-check",
+        "iconButton": true,
+        "children": [],
+        "content": null,
+        "className": null,
+        "endBadge": null,
+        "startBadge": null,
+        "endIcon": null,
+        "disabled": false
+    },
+    "title": "Button",
+    "type": "object"
+}
+Добавь кнопку с типом "error", размером "m", заливкой "clear", текстом "Ошибка", и значком справа
+{
+    "properties": {
+        "variant": "error",
+        "size": "m",
+        "fill": "clear",
+        "content": "Ошибка",
+        "endIcon": "icon-alert",
+        "children": [],
+        "startIcon": null,
+        "startBadge": null,
+        "endBadge": null,
+        "className": null,
+        "iconButton": false,
+        "disabled": false
+    },
+    "title": "Button",
+    "type": "object"
+}
+Добавь кнопку с типом "grey", размером "m", заливкой "solid", без иконок и бейджей, но с текстом "Продолжить" и классом "btn-grey"
+{
+    "properties": {
+        "variant": "grey",
+        "size": "m",
+        "fill": "solid",
+        "content": "Продолжить",
+        "className": "btn-grey",
+        "children": [],
+        "startIcon": null,
+        "endIcon": null,
+        "startBadge": null,
+        "endBadge": null,
+        "iconButton": false,
+        "disabled": false
+    },
+    "title": "Button",
+    "type": "object"
+}

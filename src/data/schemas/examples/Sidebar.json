@@ -1,0 +1,99 @@
+{
+    "$defs": {
+        "SidebarOrientationMapping": {
+            "enum": [
+                "vertical",
+                "horizontal"
+            ],
+            "title": "SidebarOrientationMapping",
+            "type": "string"
+        },
+        "SidebarVariantMapping": {
+            "enum": [
+                "default",
+                "burger"
+            ],
+            "title": "SidebarVariantMapping",
+            "type": "string"
+        }
+    },
+    "properties": {
+        "variant": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/SidebarVariantMapping"
+                }
+            ],
+            "default": "default"
+        },
+        "orientation": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/SidebarOrientationMapping"
+                }
+            ],
+            "default": "vertical"
+        },
+        "allowFavorites": {
+            "default": false,
+            "title": "Allowfavorites",
+            "type": "boolean"
+        },
+        "isLoggedIn": {
+            "anyOf": [
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Isloggedin"
+        },
+        "systemName": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Systemname"
+        },
+        "userName": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Username"
+        },
+        "userSurname": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Usersurname"
+        },
+        "children": {
+            "default": [],
+            "items": {},
+            "title": "Children",
+            "type": "array"
+        }
+    },
+    "title": "Sidebar",
+    "type": "object"
+}

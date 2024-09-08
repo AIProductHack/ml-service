@@ -1,0 +1,63 @@
+{
+    "$defs": {
+        "ButtonSize": {
+            "enum": [
+                "m",
+                "s",
+                "xs"
+            ],
+            "title": "ButtonSize",
+            "type": "string"
+        }
+    },
+    "properties": {
+        "disabled": {
+            "anyOf": [
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Disabled"
+        },
+        "className": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Classname"
+        },
+        "size": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/ButtonSize"
+                }
+            ],
+            "default": "m"
+        },
+        "children": {
+            "items": {},
+            "title": "Children",
+            "type": "array"
+        },
+        "buttonChildren": {
+            "items": {},
+            "title": "Buttonchildren",
+            "type": "array"
+        }
+    },
+    "required": [
+        "children",
+        "buttonChildren"
+    ],
+    "title": "Dropdown",
+    "type": "object"
+}

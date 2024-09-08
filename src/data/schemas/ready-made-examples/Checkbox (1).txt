@@ -1,0 +1,71 @@
+Добавь Checkbox с меткой "Согласен с условиями", установленным состоянием, и цветом "error"
+{
+    "properties": {
+        "label": "Согласен с условиями",
+        "checked": true,
+        "disabled": false,
+        "color": "error",
+        "multiple": false,
+        "value": null,
+        "className": null
+    },
+    "title": "Checkbox",
+    "type": "object"
+}
+Добавь Checkbox с меткой "Подписка на новости", не установленным состоянием, заблокированным, и пользовательским классом "newsletter-checkbox"
+{
+    "properties": {
+        "label": "Подписка на новости",
+        "checked": false,
+        "disabled": true,
+        "color": "default",
+        "multiple": false,
+        "value": null,
+        "className": "newsletter-checkbox"
+    },
+    "title": "Checkbox",
+    "type": "object"
+}
+Добавь Checkbox с меткой "Важное уведомление", установленным состоянием, промежуточным состоянием, и цветом "default"
+{
+    "properties": {
+        "label": "Важное уведомление",
+        "checked": true,
+        "disabled": false,
+        "color": "default",
+        "multiple": true,
+        "value": null,
+        "className": null
+    },
+    "title": "Checkbox",
+    "type": "object"
+}
+Добавь Checkbox с меткой "Выбор всех", с текущим значением "all", не установленным состоянием, и пользовательским классом "select-all-checkbox"
+{
+    "properties": {
+        "label": "Выбор всех",
+        "checked": false,
+        "disabled": false,
+        "color": "default",
+        "multiple": false,
+        "value": "all",
+        "className": "select-all-checkbox"
+    },
+    "title": "Checkbox",
+    "type": "object"
+}
+Добавь Checkbox с меткой "Активировать", установленным состоянием, и цветом "default", но без пользовательского класса
+{
+    "properties": {
+        "label": "Активировать",
+        "checked": true,
+        "disabled": false,
+        "color": "default",
+        "multiple": false,
+        "value": null,
+        "className": null
+    },
+    "title": "Checkbox",
+    "type": "object"
+}
+

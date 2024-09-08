@@ -1,0 +1,78 @@
+{
+    "$defs": {
+        "IndicatorStatusMapping": {
+            "enum": [
+                "default",
+                "success",
+                "error",
+                "warning",
+                "info"
+            ],
+            "title": "IndicatorStatusMapping",
+            "type": "string"
+        },
+        "OrientationMapping": {
+            "enum": [
+                "vertical",
+                "horizontal"
+            ],
+            "title": "OrientationMapping",
+            "type": "string"
+        },
+        "SizeMapping": {
+            "enum": [
+                "s",
+                "m",
+                "l"
+            ],
+            "title": "SizeMapping",
+            "type": "string"
+        }
+    },
+    "properties": {
+        "orientation": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/OrientationMapping"
+                }
+            ],
+            "default": "vertical"
+        },
+        "indicatorSize": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/SizeMapping"
+                }
+            ],
+            "default": "s"
+        },
+        "indicatorStatus": {
+            "allOf": [
+                {
+                    "$ref": "#/$defs/IndicatorStatusMapping"
+                }
+            ],
+            "default": "default"
+        },
+        "className": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "title": "Classname"
+        },
+        "children": {
+            "default": [],
+            "items": {},
+            "title": "Children",
+            "type": "array"
+        }
+    },
+    "title": "Card",
+    "type": "object"
+}
