@@ -1,14 +1,13 @@
-from typing import Any
-from abc import ABC, abstractmethod
 import requests
+from abc import ABC, abstractmethod
 
-class GeneratorModel(ABC):
-    def __init__(self, api_key: str) -> None:
+
+class GeneratorAPI(ABC):
+    def __init__(self) -> None:
         super().__init__()
-        self.api_key = api_key
 
     @abstractmethod
-    def refresh_token(self, rid='85edd55c-2805-441a-a7f1-839485b58c58', secret='Y2JjZjcwMzMtZWFlYy00NWMxLTg0MTItMTFhMzliNjUwMTcwOmJmMWRmMTU0LTEzOWYtNGY5MC1hYjQ3LTIyMzY3NWFiMTQ3Zg==') -> None:
+    def refresh_token(self, rid='85edd55c-2805-441a-a7f1-839485b58c58', secret='') -> None:
         url = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"
 
         payload = 'scope=GIGACHAT_API_PERS'
@@ -21,7 +20,6 @@ class GeneratorModel(ABC):
 
         response = requests.request("POST", url, headers=headers, data=payload, verify=False)
         self.api_key = response.json()['access_token']
-
 
     @abstractmethod
     def call_api(self, promt, quare) -> str:
