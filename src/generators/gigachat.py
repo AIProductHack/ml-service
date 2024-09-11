@@ -7,7 +7,7 @@ class GigachatAPI(GeneratorAPI):
     def refresh_token(self) -> None:
         rid = os.getenv("GIGACHAT_RID")
         secret = os.getenv("GIGACHAT_SECRET")
-        url = "Y2JjZjcwMzMtZWFlYy00NWMxLTg0MTItMTFhMzliNjUwMTcwOmJmMWRmMTU0LTEzOWYtNGY5MC1hYjQ3LTIyMzY3NWFiMTQ3Zg=="
+        url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
 
         payload = 'scope=GIGACHAT_API_PERS'
         headers = {
