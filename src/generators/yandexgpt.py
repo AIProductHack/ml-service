@@ -4,10 +4,13 @@ import json
 import time
 import jwt
 import os
+from .prompt import prompt
+
 
 class YandexGTPAPI(GeneratorAPI):
     def __init__(self) -> None:
         super().__init__()
+        self.refresh_token()
 
     def refresh_token(self) -> None:
         
@@ -30,7 +33,7 @@ class YandexGTPAPI(GeneratorAPI):
         token = x['iamToken']
         self.api_key = x['iamToken']
 
-    def call_api(self, promt, quary) -> str:
+    def call_api(self, query, promt=prompt) -> str:
 
         url = 'https://llm.api.cloud.yandex.net/foundationModels/v1/completion'
 
@@ -51,7 +54,7 @@ class YandexGTPAPI(GeneratorAPI):
             },
             {
                 "role": "user",
-                "text": quary
+                "text": query
             }
         ]
         response = requests.post(url, headers={'Authorization': 'Bearer ' + self.api_key}, json=data).json()

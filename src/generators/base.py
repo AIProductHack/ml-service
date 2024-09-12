@@ -1,5 +1,5 @@
-import requests
 from abc import ABC, abstractmethod
+
 
 class GeneratorAPI(ABC):
     def __init__(self) -> None:
@@ -9,7 +9,6 @@ class GeneratorAPI(ABC):
     def refresh_token(self) -> None:
         pass
 
-
     @abstractmethod
-    def call_api(self) -> str:
+    def call_api(self, query: str) -> str:
         pass

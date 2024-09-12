@@ -1,9 +1,13 @@
 import os
 import requests
 from .base import GeneratorAPI
-import requests
+from .prompt import prompt
+
 
 class GigachatAPI(GeneratorAPI):
+    def __init__(self) -> None:
+        super().__init__()
+        self.refresh_token()
 
     def refresh_token(self) -> None:
         rid = os.getenv("GIGACHAT_RID")
@@ -21,8 +25,7 @@ class GigachatAPI(GeneratorAPI):
         response = requests.request("POST", url, headers=headers, data=payload, verify=False)
         self.api_key = response.json()['access_token']
 
-    def call_api(self, promt, quare) -> str:
-
+    def call_api(self, query, promt=prompt) -> str:
         url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
 
         headers = {
@@ -34,7 +37,7 @@ class GigachatAPI(GeneratorAPI):
             "model": "GigaChat:latest",
             "messages": [
                 {"role": "system", "content": promt},
-                {"role": "user", "content": quare}
+                {"role": "user", "content": query}
             ],
             "temperature": 0.7
         }
