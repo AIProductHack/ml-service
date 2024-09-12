@@ -4,7 +4,7 @@ import requests
 import uuid
 
 from .base import GeneratorAPI
-from .prompt import prompt
+from .prompt.gigachat_prompt import prompt
 
 
 class GigachatAPI(GeneratorAPI):
@@ -13,21 +13,22 @@ class GigachatAPI(GeneratorAPI):
         self.refresh_token()
 
     def refresh_token(self) -> None:
-        authorization_data = os.getenv("GIGACHAT_AUTHORIZATION_DATA")
-        url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
+        authorization_data = os.getenv("GIGACHAT_SECRET")
+        rid = os.getenv("GIGACHAT_RID")
+        url = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"
 
         payload = 'scope=GIGACHAT_API_PERS'
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Accept': 'application/json',
-            'RqUID': uuid.uuid4(),
+            'RqUID': rid,
             'Authorization': f'Basic {authorization_data}'
         }
 
         response = requests.request("POST", url, headers=headers, data=payload, verify=False)
         self.api_key = response.json()['access_token']
 
-    def call_api(self, prompt: Tuple, query: str) -> Tuple[str, str]:
+    def call_api(self, query: str, prompt: str = prompt, ) -> str:
         url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
 
         headers = {
@@ -38,7 +39,7 @@ class GigachatAPI(GeneratorAPI):
         data = {
             "model": "GigaChat:latest",
             "messages": [
-                {"role": "system", "content": prompt[0]},
+                {"role": "system", "content": prompt},
                 {"role": "user", "content": query}
             ],
             "temperature": 0.7

@@ -1,3 +1,4 @@
+import json
 from typing import Annotated
 from fastapi import APIRouter, File
 from .schemas import GenerationResponse
@@ -15,9 +16,19 @@ def generate_from_text(
     generator_type: GeneratorType = GeneratorType.GIGACHAT
 ):
     model = GeneratorFactory.get_generator(generator_type.value)
-    response = model.call_api(text)
-    print(response)
-    return response
+    try:
+        response = model.call_api(text)
+    except Exception as e:
+        print(e)
+        model.refresh_token()
+    finally:
+        response = model.call_api(text)
+    response = response.replace("\n", "")
+    try:
+        result = json.loads(response)
+        return GenerationResponse(data=result)
+    except:
+        return GenerationResponse()
 
 
 @router.post("/from_audio", status_code=200, response_model=GenerationResponse)

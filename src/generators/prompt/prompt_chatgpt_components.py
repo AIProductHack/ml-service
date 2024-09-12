@@ -128,19 +128,4 @@ prompt = """
     "type": "object"
 }
 ]
-Также генерируй CSS файл пример:
-/* Alert */
-.alert-success {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #3c763d;
-}
-
-/* Button */
-.btn-primary {
-    background-color: #337ab7;
-    border-color: #2e6da4;
-    color: white;
-}
-где .alert-success и .btn-primary это classname
 """

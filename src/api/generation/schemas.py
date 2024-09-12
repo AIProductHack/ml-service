@@ -1,5 +1,7 @@
 from typing import TypeAlias, Union
 from pydantic import BaseModel
+from typing import Any
+
 from src.data.schemas.components import (
     Alert,
     Button,
@@ -28,4 +30,4 @@ Components: TypeAlias = Union[
 
 
 class GenerationResponse(BaseModel):
-    data: list[Components] = []
+    data: list[dict[str, Any]] = []

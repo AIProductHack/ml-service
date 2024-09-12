@@ -1,6 +1,6 @@
 import enum
 from .base import GeneratorAPI
-from .yandexgpt import YandexGTPAPI
+from .yandexgpt import YandexGPTAPI
 from .gigachat import GigachatAPI
 from .chatgpt import ChatGPTAPI
 
@@ -18,6 +18,6 @@ class GeneratorFactory:
             case GeneratorType.CHATGPT.value:
                 return ChatGPTAPI()
             case GeneratorType.YANDEXGPT.value:
-                return YandexGTPAPI()
+                return YandexGPTAPI()
             case GeneratorType.GIGACHAT.value:
                 return GigachatAPI()
