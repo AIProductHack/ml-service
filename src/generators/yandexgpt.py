@@ -1,37 +1,34 @@
-from .base import GeneratorAPI
 import requests
-import json
 import time
 import jwt
 import os
+from typing import Tuple
 
-class YandexGTPAPI(GeneratorAPI):
-    def __init__(self) -> None:
-        super().__init__()
+from .base import GeneratorAPI
 
+
+class YandexGPTAPI(GeneratorAPI):
     def refresh_token(self) -> None:
         
         now = int(time.time())
         payload = {
             'aud': 'https://iam.api.cloud.yandex.net/iam/v1/tokens',
-            'iss': os.getenv("ygpt_service_account_id"),
+            'iss': os.getenv("YAGPT_SERVICE_ACCOUNT_ID"),
             'iat': now,
             'exp': now + 360}
 
         # Формирование JWT
         encoded_token = jwt.encode(
             payload,
-            os.getenv("ygpt_private_key"),
+            os.getenv("YAGPT_PRIVATE_KEY"),
             algorithm='PS256',
-            headers={'kid': os.getenv("ygpt_key_id")})
+            headers={'kid': os.getenv("YAGPT_KEY_ID")})
 
         url = 'https://iam.api.cloud.yandex.net/iam/v1/tokens'
         x = requests.post(url, headers={'Content-Type': 'application/json'}, json={'jwt': encoded_token}).json()
-        token = x['iamToken']
         self.api_key = x['iamToken']
 
-    def call_api(self, promt, quary) -> str:
-
+    def call_api(self, prompt: Tuple, query: str) -> Tuple[str, str]:
         url = 'https://llm.api.cloud.yandex.net/foundationModels/v1/completion'
 
         data = {}
@@ -45,14 +42,13 @@ class YandexGTPAPI(GeneratorAPI):
                                      'temperature': 0.5,
                                      'maxTokens': 100000}
         data['messages'] = [
-            {
-                "role": "system",
-                "text": promt
-            },
-            {
-                "role": "user",
-                "text": quary
-            }
+            {"role": "system", "text": prompt[0]},
+            {"role": "user", "text": query}
         ]
         response = requests.post(url, headers={'Authorization': 'Bearer ' + self.api_key}, json=data).json()
         return response['result']['alternatives'][0]['message']['text']
+
+
+def parse_response(response: str) -> Tuple[str, str]:
+    # ?????
+    pass
