@@ -1,0 +1,42 @@
+import os
+from typing import Tuple
+from openai import OpenAI
+
+from .base import GeneratorAPI
+
+
+class ChatGPTAPI(GeneratorAPI):
+    def __init__(self) -> None:
+        super().__init__()
+        self.api_key = os.environ['CHATGPT_API_KEY']
+        self.client = OpenAI(
+            api_key=f"{self.api_key}",
+            base_url="https://api.proxyapi.ru/openai/v1",
+        )
+
+    def refresh_token(self) -> None:
+        raise Exception("Don't call refresh_token() for ChatGPT")
+
+    def call_api(self, prompt: Tuple, query: str) -> Tuple[str, str]:
+        response = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": prompt[0]},
+                {"role": "user", "content": query}
+            ],
+            temperature=0.5,
+            response_format={"type": "json_object"}
+        )
+        components = response.choices[0].message.content
+        assert components is not None
+        response = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": prompt[1]},
+                {"role": "user", "content": str(components)}
+            ],
+            temperature=0.5
+        )
+        css = response.choices[0].message.content
+        assert css is not None
+        return components, css
