@@ -30,4 +30,4 @@ class ChatGPTAPI(GeneratorAPI):
             response_format={"type": "json_object"}
         )
         result = json.loads(response.choices[0].message.content)
-        return str(result['components']), result['css']
+        return result['components'], result['css']
