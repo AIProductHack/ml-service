@@ -1,6 +1,8 @@
+import json
 import os
 from typing import Tuple
 from openai import OpenAI
+from .prompt.prompt_chatgpt import prompt
 
 from .base import GeneratorAPI
 
@@ -17,26 +19,15 @@ class ChatGPTAPI(GeneratorAPI):
     def refresh_token(self) -> None:
         raise Exception("Don't call refresh_token() for ChatGPT")
 
-    def call_api(self, prompt: Tuple, query: str) -> Tuple[str, str]:
+    def call_api(self, query: str) -> Tuple[str, str]:
         response = self.client.chat.completions.create(
             model="gpt-4o",
             messages=[
-                {"role": "system", "content": prompt[0]},
+                {"role": "system", "content": prompt},
                 {"role": "user", "content": query}
             ],
             temperature=0.5,
             response_format={"type": "json_object"}
         )
-        components = response.choices[0].message.content
-        assert components is not None
-        response = self.client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": prompt[1]},
-                {"role": "user", "content": str(components)}
-            ],
-            temperature=0.5
-        )
-        css = response.choices[0].message.content
-        assert css is not None
-        return components, css
+        result = json.loads(response.choices[0].message.content)
+        return str(result['components']), result['css']

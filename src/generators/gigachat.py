@@ -28,7 +28,7 @@ class GigachatAPI(GeneratorAPI):
         response = requests.request("POST", url, headers=headers, data=payload, verify=False)
         self.api_key = response.json()['access_token']
 
-    def call_api(self, query: str, prompt: str = prompt, ) -> str:
+    def call_api(self, query: str):
         url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
 
         headers = {
@@ -46,4 +46,4 @@ class GigachatAPI(GeneratorAPI):
         }
 
         response = requests.post(url, headers=headers, json=data, verify=False)
-        return response.json()['choices'][0]['message']['content']
+        return response.json()['choices'][0]['message']['content'], None

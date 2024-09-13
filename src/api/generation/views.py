@@ -23,10 +23,11 @@ def generate_from_text(
         model.refresh_token()
     finally:
         response = model.call_api(text)
-    response = response.replace("\n", "")
+    # response = response.replace("\n", "")
     try:
-        result = json.loads(response)
-        return GenerationResponse(data=result)
+        result = json.loads(response[0])
+        css = response[1]
+        return GenerationResponse(data=result, css=css)
     except:
         return GenerationResponse()
 
