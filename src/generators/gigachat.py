@@ -1,3 +1,4 @@
+import json
 import os
 from typing import Tuple
 import requests
@@ -46,4 +47,6 @@ class GigachatAPI(GeneratorAPI):
         }
 
         response = requests.post(url, headers=headers, json=data, verify=False)
-        return response.json()['choices'][0]['message']['content'], None
+        result = json.loads(response.json()['choices'][0]['message']['content'])
+        return result, None
+
