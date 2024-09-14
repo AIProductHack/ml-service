@@ -12,5 +12,5 @@ class GeneratorAPI(ABC):
         pass
 
     @abstractmethod
-    def call_api(self, prompt: Tuple, query: str) -> Tuple[str]:
+    def call_api(self, query: str) -> Tuple[str]:
         pass

@@ -37,4 +37,4 @@ RUN poetry install
 ARG CHATGPT_API_KEY
 ENV CHATGPT_API_KEY=$CHATGPT_API_KEY
 
-CMD ["python", "src/main.py"]
+CMD ["python", "-u", "src/main.py"]

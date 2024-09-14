@@ -1,6 +1,6 @@
 Твоя задача генерировать JSON структуру компонентов строго по шаблону ниже:
 [даже если параметр принимает null или 0, все равно выводи все параметры
-#1. Alert
+#1. Alert 
 {
     "properties": {
         "title": null, # Заголовок/текст компонента
@@ -125,5 +125,1552 @@
         "content": null,
     "title": "Typography",
     "type": "object"
+},
+{
+  "properties": {
+    "items": {
+      "description": "Список элементов аккордеона",
+      "type": "array"
+    },
+    "startIcon": {
+      "description": "Иконка, отображаемая в начале аккордеона",
+      "type": "string",
+      "enum": "\"plus\", /\"arrow\"",
+      "default": null
+    },
+    "endIcon": {
+      "description": "Иконка, отображаемая в конце аккордеона",
+      "type": "string",
+      "enum": "\"plus\", /\"arrow\"",
+      "default": null
+    },
+    "size": {
+      "description": "Размер аккордеона",
+      "type": "string",
+      "enum": "\"xs\", /\"s\", /\"m\"",
+      "default": "m"
+    },
+    "variant": {
+      "description": "Вариант отображения аккордеона",
+      "type": "string",
+      "enum": "\"default\", /\"paper\"",
+      "default": "default"
+    },
+    "className": {
+      "description": "Дополнительные стили для компонента",
+      "type": "string",
+      "default": ""
+    },
+    "multipleExpanded": {
+      "description": "Разрешить раскрывать несколько элементов одновременно",
+      "type": "boolean",
+      "default": false
+    },
+    "disabled": {
+      "description": "Отключить аккордеон",
+      "type": "boolean",
+      "default": false
+    },
+    "title": "Accordion",
+    "type": "object"
+  }
+},
+{
+  "properties": {
+    "className": {
+      "description": "Дополнительные стили для компонента",
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "description": "Заголовок компонента, передается в виде ReactElement",
+      "type": "string",
+      "default": null
+    },
+    "children": {
+      "description": "Дочерние элементы компонента (массив или один элемент)",
+      "type": "array | object",
+      "default": []
+    },
+    "title": "AttachFiles",
+    "type": "object"
+  }
+},
+{
+  "properties": {
+    "size": {
+      "description": "Размер аватара",
+      "type": "string",
+      "enum": "\"3xl\", /\"2xl\", /\"xl\", /\"l\", /\"m\", /\"s\"",
+      "default": "m"
+    },
+    "imageSrc": {
+      "description": "URL-адрес изображения аватара",
+      "type": "string",
+      "default": null
+    },
+    "userName": {
+      "description": "Имя пользователя",
+      "type": "string",
+      "default": ""
+    },
+    "userSurname": {
+      "description": "Фамилия пользователя",
+      "type": "string",
+      "default": ""
+    },
+    "online": {
+      "description": "Статус пользователя онлайн",
+      "type": "boolean",
+      "default": false
+    },
+    "badgeIconName": {
+      "description": "Имя иконки бейджа для отображения",
+      "type": "string | ReactNode",
+      "default": null
+    },
+    "badgeSpecialIcon": {
+      "description": "Флаг, указывающий, является ли иконка бейджа специальной",
+      "type": "boolean",
+      "default": false
+    },
+    "numberIndicator": {
+      "description": "Числовой индикатор для отображения",
+      "type": "number",
+      "default": null
+    },
+    "className": {
+      "description": "Дополнительные стили для компонента",
+      "type": "string",
+      "default": ""
+    },
+    "title": "Avatar",
+    "type": "object"
+  }
+},
+{
+  "properties": {
+    "color": {
+      "description": "Цвет бейджа",
+      "type": "string",
+      "enum": "\"primary\", /\"secondary\", /\"error\", /\"success\", /\"warning\", /\"grey\", /\"light-grey\", /\"light-green\"",
+      "default": "primary"
+    },
+    "size": {
+      "description": "Размер бейджа",
+      "type": "string",
+      "enum": "\"l\", /\"m\", /\"s\", /\"xs\"",
+      "default": "m"
+    },
+    "variant": {
+      "description": "Вариант отображения бейджа",
+      "type": "string",
+      "enum": "\"solid\", /\"outline\"",
+      "default": "solid"
+    },
+    "children": {
+      "description": "Контент бейджа",
+      "type": "string | number",
+      "default": null
+    },
+    "className": {
+      "description": "Дополнительный CSS класс",
+      "type": "string",
+      "default": null
+    },
+    "title": "Badge",
+    "type": "object"
+  }
+},
+{
+  "properties": {
+    "crumbs": {
+      "description": "Массив хлебных крошек",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "description": "Текст метки хлебной крошки",
+            "type": "string"
+          },
+          "href": {
+            "description": "URL для хлебной крошки",
+            "type": "string"
+          },
+          "active": {
+            "description": "Флаг, указывающий, активна ли хлебная крошка",
+            "type": "boolean",
+            "default": false
+          },
+          "target": {
+            "description": "Целевой фрейм для ссылки",
+            "type": "string",
+            "enum": "\"_blank\", /\"_self\", /\"_parent\", /\"_top\""
+          },
+          "isLast": {
+            "description": "Флаг, указывающий, является ли хлебная крошка последней",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": ["label", "href"]
+      }
+    },
+    "className": {
+      "description": "Дополнительный CSS класс",
+      "type": "string",
+      "default": null
+    },
+    "width": {
+      "description": "Ширина контейнера хлебных крошек",
+      "type": "number",
+      "default": null
+    },
+    "title": "Breadcrumbs",
+    "type": "object"
+  }
+},
+{
+  "properties": {
+    "color": {
+      "description": "Цвет чипа",
+      "type": "string",
+      "enum": "\"primary\", /\"error\", /\"success\", /\"warning\"",
+      "default": "primary"
+    },
+    "size": {
+      "description": "Размер чипа",
+      "type": "string",
+      "enum": "\"m\", /\"s\"",
+      "default": "m"
+    },
+    "variant": {
+      "description": "Вариант отображения чипа",
+      "type": "string",
+      "enum": "\"solid\", /\"outline\", /\"ghost\"",
+      "default": "solid"
+    },
+    "label": {
+      "description": "Метка чипа",
+      "type": "string",
+      "default": null
+    },
+    "children": {
+      "description": "Основной контент чипа",
+      "type": "string",
+      "default": null
+    },
+    "suffix": {
+      "description": "Суффикс чипа",
+      "type": "string",
+      "default": null
+    },
+    "className": {
+      "description": "Дополнительный CSS класс",
+      "type": "string",
+      "default": null
+    },
+    "title": "Chip",
+    "type": "object"
+  }
+},
+{
+  "properties": {
+    "children": {
+      "description": "Дочерние элементы",
+      "type": "node",
+      "default": null
+    },
+    "onClickAway": {
+      "description": "Функция, вызываемая при клике вне элемента",
+      "type": "function",
+      "default": null
+    },
+    "className": {
+      "description": "Дополнительный CSS класс",
+      "type": "string",
+      "default": null
+    },
+    "style": {
+      "description": "Инлайн-стили",
+      "type": "object",
+      "default": null
+    },
+    "excludeRef": {
+      "description": "Ссылки на элементы, которые следует исключить из проверки клика",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "current": {
+            "type": "object"
+          }
+        }
+      },
+      "default": null
+    },
+    "eventType": {
+      "description": "Тип события для прослушивания",
+      "type": "string",
+      "enum": "\"mouseup\", /\"mousedown\", /\"click\"",
+      "default": "mouseup"
+    },
+    "title": "ClickAwayListener",
+    "type": "object"
+  }
+},
+{
+  "description": "Компонент Colors отображает палитру цветов с возможностью копирования значений и просмотра темной/светлой темы.",
+  "properties": {
+    "colors": {
+      "description": "Массив с двумя палитрами цветов: светлой и темной.",
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "default": []
+    },
+    "groupColorKey": {
+      "description": "Ключ группы цветов для отображения.",
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "description": "Основной заголовок для секции цветов.",
+      "type": "string",
+      "default": ""
+    },
+    "subTitle": {
+      "description": "Дополнительный заголовок под основным заголовком.",
+      "type": "string",
+      "default": null
+    }
+  },
+  "type": "object",
+  "title": "Colors"
+},
+{
+  "description": "Компонент DatePicker для выбора даты и времени в различных форматах.",
+  "properties": {
+    "id": {
+      "description": "Уникальный идентификатор компонента.",
+      "type": "number | string",
+      "default": null
+    },
+    "portalContainerId": {
+      "description": "ID контейнера для портала.",
+      "type": "string",
+      "default": "root"
+    },
+    "locale": {
+      "description": "Локаль для форматирования дат.",
+      "type": "string",
+      "default": "ru"
+    },
+    "className": {
+      "description": "Дополнительный CSS класс.",
+      "type": "string",
+      "default": null
+    },
+    "enabledFrom": {
+      "description": "Минимальная доступная дата.",
+      "type": "Date",
+      "default": "1900-01-01"
+    },
+    "enabledTo": {
+      "description": "Максимальная доступная дата.",
+      "type": "Date",
+      "default": "2100-12-31"
+    },
+    "enabledHourFrom": {
+      "description": "Функция для определения минимального доступного часа.",
+      "type": "function",
+      "default": null
+    },
+    "enabledHourTo": {
+      "description": "Функция для определения максимального доступного часа.",
+      "type": "function",
+      "default": null
+    },
+    "enabledMinuteFrom": {
+      "description": "Функция для определения минимальной доступной минуты.",
+      "type": "function",
+      "default": null
+    },
+    "enabledMinuteTo": {
+      "description": "Функция для определения максимальной доступной минуты.",
+      "type": "function",
+      "default": null
+    },
+    "disabled": {
+      "description": "Флаг для отключения компонента.",
+      "type": "boolean",
+      "default": false
+    },
+    "label": {
+      "description": "Метка для компонента.",
+      "type": "string",
+      "default": null
+    },
+    "disableChange": {
+      "description": "Флаг для отключения возможности изменения.",
+      "type": "boolean",
+      "default": false
+    },
+    "name": {
+      "description": "Имя поля для использования в формах.",
+      "type": "string",
+      "default": null
+    },
+    "withPortal": {
+      "description": "Флаг для рендеринга в портале.",
+      "type": "boolean",
+      "default": false
+    },
+    "error": {
+      "description": "Флаг для отображения ошибки.",
+      "type": "boolean",
+      "default": false
+    },
+    "colored": {
+      "description": "Флаг для применения цветовых стилей.",
+      "type": "boolean",
+      "default": false
+    },
+    "disableChangesOnBlur": {
+      "description": "Флаг для отключения изменений при потере фокуса.",
+      "type": "boolean",
+      "default": false
+    },
+    "isOpenOnFocus": {
+      "description": "Флаг для открытия пикера при фокусе.",
+      "type": "boolean",
+      "default": false
+    },
+    "pseudo": {
+      "description": "Флаг для отображения псевдо-инпута.",
+      "type": "boolean",
+      "default": false
+    },
+    "pseudoChildren": {
+      "description": "Содержимое для псевдо-инпута.",
+      "type": "ReactNode",
+      "default": null
+    },
+    "isHideYear": {
+      "description": "Флаг для скрытия года.",
+      "type": "boolean",
+      "default": false
+    },
+    "size": {
+      "description": "Размер компонента.",
+      "type": "sizesMappingInput",
+      "default": null
+    },
+    "withoutWeekdays": {
+      "description": "Флаг для отображения без дней недели.",
+      "type": "boolean",
+      "default": false
+    },
+    "onPanelChange": {
+      "description": "Обработчик изменения панели.",
+      "type": "function",
+      "default": null
+    },
+    "onSelect": {
+      "description": "Обработчик выбора даты.",
+      "type": "function",
+      "default": null
+    },
+    "infiniteTimeScroll": {
+      "description": "Флаг для бесконечной прокрутки времени.",
+      "type": "boolean",
+      "default": false
+    },
+    "reset": {
+      "description": "Флаг наличия кнопки сброса.",
+      "type": "boolean",
+      "default": false
+    },
+    "onReset": {
+      "description": "Обработчик сброса значения.",
+      "type": "function",
+      "default": null
+    },
+    "valueFrom": {
+      "description": "Начальная дата для периода.",
+      "type": "Date",
+      "default": null
+    },
+    "valueTo": {
+      "description": "Конечная дата для периода.",
+      "type": "Date",
+      "default": null
+    },
+    "shiftFrom": {
+      "description": "Начальное значение смены для типа 'shift'.",
+      "type": "number",
+      "default": null
+    },
+    "shiftTo": {
+      "description": "Конечное значение смены для типа 'shift'.",
+      "type": "number",
+      "default": null
+    },
+    "shiftLength": {
+      "description": "Длина смены.",
+      "type": "2 | 3",
+      "default": "defaultShiftLength"
+    },
+    "type": {
+      "description": "Тип пикера.",
+      "type": "'date' | 'time' | 'seconds' | 'period' | 'shift'",
+      "default": "date"
+    },
+    "level": {
+      "description": "Уровень детализации выбора даты.",
+      "type": "TLevel",
+      "default": "day"
+    }
+  },
+  "type": "object",
+  "title": "DatePicker"
+},
+{
+  "component": "Divider",
+  "description": "Компонент Divider для создания разделителей. Может быть горизонтальным или вертикальным.",
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Дети компонента Divider. Будут отображаться между горизонтальными границами.",
+      "optional": true
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Дополнительный CSS класс для компонента.",
+      "optional": true
+    },
+    {
+      "name": "dashed",
+      "type": "boolean",
+      "description": "Флаг для отображения пунктирной линии.",
+      "default": false,
+      "optional": true
+    },
+    {
+      "name": "orientation",
+      "type": "string",
+      "description": "Ориентация разделителя. Может быть 'left', 'right' или 'center'.",
+      "default": "center",
+      "optional": true
+    },
+    {
+      "name": "orientationSpace",
+      "type": "number",
+      "description": "Пробел вокруг ориентации, если применимо.",
+      "default": 0,
+      "optional": true
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "description": "Тип разделителя. Может быть 'horizontal' или 'vertical'.",
+      "optional": true
+    }
+  ],
+  "defaultProps": {
+    "dashed": false,
+    "orientation": "center",
+    "orientationSpace": 0
+  }
+},
+{
+  "component": "Vertical",
+  "description": "Компонент для отображения вертикальной границы.",
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Дополнительный CSS класс для компонента.",
+      "optional": true
+    },
+    {
+      "name": "dashed",
+      "type": "boolean",
+      "description": "Флаг для отображения пунктирной линии.",
+      "optional": true
+    }
+  ]
+},
+{
+  "component": "HorizontalBorder",
+  "description": "Компонент для отображения горизонтальной границы.",
+  "props": [
+    {
+      "name": "isSmall",
+      "type": "boolean",
+      "description": "Флаг для отображения маленькой границы.",
+      "required": true
+    },
+    {
+      "name": "dashed",
+      "type": "boolean",
+      "description": "Флаг для отображения пунктирной линии.",
+      "optional": true
+    },
+    {
+      "name": "orientation",
+      "type": "string",
+      "description": "Ориентация границы. Используется для определения размещения.",
+      "optional": true
+    },
+    {
+      "name": "orientationSpace",
+      "type": "number",
+      "description": "Пробел вокруг ориентации, если применимо.",
+      "optional": true
+    }
+  ]
+},
+{
+    "properties": {
+        "isOpen": {
+            "description": "Состояние открытия/закрытия панели.",
+            "type": "boolean",
+            "default": false
+        },
+        "onClose": {
+            "description": "Функция для закрытия панели.",
+            "type": "function"
+        },
+        "position": {
+            "description": "Позиция панели.",
+            "type": "string",
+            "enum": ["left", "right", "top", "bottom"],
+            "default": "right"
+        },
+        "className": {
+            "description": "Дополнительные CSS классы для панели.",
+            "type": "string",
+            "default": null
+        },
+        "overlayClassName": {
+            "description": "Дополнительные CSS классы для оверлея.",
+            "type": "string",
+            "default": null
+        },
+        "children": {
+            "description": "Содержимое панели.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "width": {
+            "description": "Ширина панели (если позиция 'left' или 'right').",
+            "type": "string",
+            "default": "var(--drawer-default-width)"
+        },
+        "height": {
+            "description": "Высота панели (если позиция 'top' или 'bottom').",
+            "type": "string",
+            "default": "var(--drawer-default-height)"
+        },
+        "disableBackdropClick": {
+            "description": "Отключает закрытие панели по клику вне её области.",
+            "type": "boolean",
+            "default": false
+        },
+        "isViewCloseButton": {
+            "description": "Отображает кнопку закрытия.",
+            "type": "boolean",
+            "default": true
+        },
+        "overlay": {
+            "description": "Отображает оверлей.",
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "title": "Drawer",
+    "type": "object"
+},
+{
+    "properties": {
+        "errorCode": {
+            "description": "Код ошибки, который определяет, какая картинка будет отображаться.",
+            "type": "integer",
+            "default": null
+        },
+        "description": {
+            "description": "Описание ошибки, которое будет отображаться на странице.",
+            "type": "string",
+            "default": null
+        },
+        "hint": {
+            "description": "Подсказка или рекомендация для пользователя.",
+            "type": "string",
+            "default": null
+        }
+    },
+    "title": "ErrorPageProps",
+    "type": "object"
+},
+{
+    "properties": {
+        "title": {
+            "description": "Заголовок для компонента Header.",
+            "type": "string"
+        },
+        "type": {
+            "description": "Тип заголовка (compact или default).",
+            "type": "string",
+            "enum": ["compact", "default"],
+            "default": "default"
+        },
+        "bg": {
+            "description": "Определяет, есть ли фоновое изображение.",
+            "type": "boolean",
+            "default": false
+        },
+        "back": {
+            "description": "Функция, вызываемая при нажатии на кнопку 'Назад'.",
+            "type": "function",
+            "default": null
+        },
+        "favorite": {
+            "description": "Функция для кнопки 'Избранное'.",
+            "type": "function",
+            "default": null
+        },
+        "notification": {
+            "description": "Функция для отображения уведомлений.",
+            "type": "function",
+            "default": null
+        },
+        "date": {
+            "description": "Отображение даты в заголовке.",
+            "type": "boolean",
+            "default": false
+        },
+        "notificationAmount": {
+            "description": "Количество уведомлений.",
+            "type": "integer",
+            "default": 0
+        },
+        "breadcrumbs": {
+            "description": "Элементы навигационных хлебных крошек.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": null
+        },
+        "className": {
+            "description": "Дополнительные CSS классы для заголовка.",
+            "type": "string",
+            "default": null
+        }
+    },
+    "title": "IHeader",
+    "type": "object"
+},
+{
+    "properties": {
+        "name": {
+            "description": "Имя иконки, используемое для отображения.",
+            "type": "string"
+        },
+        "color": {
+            "description": "Цвет иконки, может быть одним из предопределенных значений.",
+            "type": "string",
+            "enum": ["action", "disabled", "error", "primary", "secondary", "inherit", "success", "warning", "default"],
+            "default": "default"
+        },
+        "htmlColor": {
+            "description": "HTML-цвет, который будет применен к иконке.",
+            "type": "string",
+            "default": null
+        },
+        "containerSize": {
+            "description": "Размер контейнера для иконки. Может быть 32, 24 или 16 пикселей.",
+            "type": "integer",
+            "enum": [32, 24, 16],
+            "default": 24
+        },
+        "className": {
+            "description": "Дополнительные CSS классы для иконки.",
+            "type": "string",
+            "default": null
+        },
+        "style": {
+            "description": "Инлайн-стили для иконки.",
+            "type": "object",
+            "default": null
+        },
+        "badge": {
+            "description": "Дополнительный элемент (например, значок), который может быть добавлен к иконке.",
+            "type": "object",
+            "default": null
+        }
+    },
+    "title": "TIconProps",
+    "type": "object"
+},
+{
+    "properties": {
+        "aspectRatio": {
+            "description": "Соотношение сторон изображения. Может быть одним из предопределенных значений.",
+            "type": "string",
+            "enum": ["ratio-1x1", "ratio-4x3", "ratio-3x4", "ratio-16x9"],
+            "default": null
+        },
+        "radius": {
+            "description": "Радиус углов изображения. Может быть одним из предопределенных значений.",
+            "type": "string",
+            "enum": ["radius-none", "radius-4px", "radius-8px"],
+            "default": null
+        },
+        "className": {
+            "description": "Дополнительные CSS классы для изображения.",
+            "type": "string",
+            "default": null
+        },
+        "zoom": {
+            "description": "Флаг, указывающий, включено ли увеличение изображения.",
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "title": "IImagePicture",
+    "type": "object"
+},
+{
+  "properties": {
+    "id": {
+      "description": "Уникальный идентификатор инпута.",
+      "type": "string"
+    },
+    "value": {
+      "description": "Значение инпута.",
+      "type": "string"
+    },
+    "disabled": {
+      "description": "Флаг отключения инпута.",
+      "type": "boolean",
+      "default": false
+    },
+    "label": {
+      "description": "Текст метки (label) инпута.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Имя инпута.",
+      "type": "string"
+    },
+    "multiline": {
+      "description": "Флаг многострочного режима.",
+      "type": "boolean",
+      "default": false
+    },
+    "pseudo": {
+      "description": "Флаг псевдо-инпута.",
+      "type": "boolean",
+      "default": false
+    },
+    "icon": {
+      "description": "Иконка инпута.",
+      "type": "string"
+    },
+    "helperText": {
+      "description": "Вспомогательный текст.",
+      "type": "string"
+    },
+    "resize": {
+      "description": "Флаг возможности изменения размера (для textarea).",
+      "type": "boolean",
+      "default": false
+    },
+    "reset": {
+      "description": "Флаг наличия кнопки сброса.",
+      "type": "boolean",
+      "default": false
+    },
+    "onReset": {
+      "description": "Обработчик сброса значения.",
+      "type": "function"
+    },
+    "onChange": {
+      "description": "Обработчик изменения значения.",
+      "type": "function"
+    },
+    "onBlur": {
+      "description": "Обработчик потери фокуса.",
+      "type": "function"
+    },
+    "size": {
+      "description": "Размер инпута.",
+      "type": "string",
+      "enum": ["small", "medium", "large"],  // Пример значений для sizesMappingInput
+      "default": "medium"
+    },
+    "color": {
+      "description": "Цвет инпута.",
+      "type": "string",
+      "enum": ["default", "primary", "secondary"],  // Пример значений для customInputColors
+      "default": "default"
+    },
+    "colored": {
+      "description": "Флаг цветного фона.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "title": "IInputAdditionalProps",
+  "type": "object"
+},
+{
+  "properties": {
+    "min": {
+      "description": "Минимальное значение диапазона.",
+      "type": "number"
+    },
+    "max": {
+      "description": "Максимальное значение диапазона.",
+      "type": "number"
+    },
+    "step": {
+      "description": "Шаг изменения значения диапазона.",
+      "type": "number",
+      "default": 1
+    },
+    "value": {
+      "description": "Текущее значение диапазона. Состоит из минимального и максимального значений.",
+      "type": "object",
+      "properties": {
+        "min": {
+          "description": "Минимальное текущее значение.",
+          "type": "number"
+        },
+        "max": {
+          "description": "Максимальное текущее значение.",
+          "type": "number"
+        }
+      }
+    },
+    "onChange": {
+      "description": "Функция-обработчик изменения значения диапазона.",
+      "type": "function"
+    },
+    "disabled": {
+      "description": "Флаг отключения диапазона.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "title": "IInputRangeProps",
+  "type": "object"
+},
+{
+  "properties": {
+    "children": {
+      "description": "Содержимое, которое будет отображаться внутри ссылки.",
+      "type": "ReactNode"
+    },
+    "href": {
+      "description": "URL, на который будет вести ссылка.",
+      "type": "string"
+    },
+    "preventRedirect": {
+      "description": "Флаг, предотвращающий перенаправление по ссылке.",
+      "type": "boolean",
+      "default": false
+    },
+    "target": {
+      "description": "Определяет, в каком контексте откроется ссылка (например, в новом окне или текущем).",
+      "type": "string",
+      "enum": ["_blank", "_self", "_parent", "_top"],
+      "default": "_parent"
+    },
+    "size": {
+      "description": "Размер текста ссылки.",
+      "type": "string",
+      "enum": ["h1", "h2", "h3", "h4", "sub1", "sub2", "sub3", "body", "body1", "body2", "caption"],
+      "default": "body"
+    },
+    "disabled": {
+      "description": "Флаг, отключающий ссылку.",
+      "type": "boolean",
+      "default": false
+    },
+    "leftIcon": {
+      "description": "Иконка, которая отображается слева от текста ссылки.",
+      "type": "ReactNode"
+    },
+    "rightIcon": {
+      "description": "Иконка, которая отображается справа от текста ссылки.",
+      "type": "ReactNode"
+    },
+    "className": {
+      "description": "Дополнительные CSS-классы для ссылки.",
+      "type": "string"
+    }
+  },
+  "title": "Link",
+  "type": "object"
+},
+{
+  "properties": {
+    "isOpen": {
+      "description": "Состояние открытия/закрытия модального окна.",
+      "type": "boolean"
+    },
+    "onClose": {
+      "description": "Функция для закрытия модального окна.",
+      "type": "function"
+    },
+    "children": {
+      "description": "Содержимое модального окна.",
+      "type": "ReactNode"
+    },
+    "isDraggable": {
+      "description": "Возможность перетаскивания модального окна.",
+      "type": "boolean",
+      "default": false
+    },
+    "isResizable": {
+      "description": "Возможность изменения размеров модального окна.",
+      "type": "boolean",
+      "default": false
+    },
+    "onEscapeDown": {
+      "description": "Функция для обработки нажатия клавиши Escape.",
+      "type": "function"
+    },
+    "className": {
+      "description": "Дополнительные CSS классы для модального окна.",
+      "type": "string"
+    },
+    "disableBackdropClick": {
+      "description": "Отключает закрытие модального окна по клику вне его области.",
+      "type": "boolean",
+      "default": false
+    },
+    "disablePageScroll": {
+      "description": "Отключает прокрутку страницы при открытом модальном окне.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "title": "ModalProps",
+  "type": "object"
+},
+{
+  "properties": {
+    "percentage": {
+      "description": "Значение прогресса в процентах.",
+      "type": "number"
+    },
+    "label": {
+      "description": "Текстовая метка, отображаемая рядом с индикатором прогресса.",
+      "type": "string"
+    },
+    "className": {
+      "description": "Дополнительные CSS классы для прогресс-бара.",
+      "type": "string"
+    }
+  },
+  "title": "ProgressBarProps",
+  "type": "object",
+  "required": ["percentage"]
+},
+{
+  "properties": {
+    "label": {
+      "description": "Текст или элемент для метки PseudoInput.",
+      "type": ["string", "object"]
+    },
+    "children": {
+      "description": "Содержимое PseudoInput.",
+      "type": "object"
+    },
+    "size": {
+      "description": "Размер компонента PseudoInput.",
+      "type": "string",
+      "enum": ["m", "s"],
+      "default": "m"
+    },
+    "labelColor": {
+      "description": "Цвет метки PseudoInput.",
+      "type": "string"
+    },
+    "className": {
+      "description": "Дополнительный CSS класс.",
+      "type": "string"
+    }
+  },
+  "title": "PseudoInputProps",
+  "type": "object",
+  "required": ["label", "children"]
+},
+{
+  "properties": {
+    "value": {
+      "description": "Значение радио-кнопки.",
+      "type": "string"
+    },
+    "checked": {
+      "description": "Флаг, указывающий, выбрана ли радио-кнопка.",
+      "type": "boolean"
+    },
+    "disabled": {
+      "description": "Флаг, указывающий, отключена ли радио-кнопка.",
+      "type": "boolean"
+    },
+    "onChange": {
+      "description": "Функция обработки изменения состояния радио-кнопки.",
+      "type": "function",
+      "parameters": [
+        {
+          "name": "event",
+          "type": "ChangeEvent",
+          "description": "Событие изменения состояния радио-кнопки."
+        }
+      ]
+    },
+    "className": {
+      "description": "Дополнительный CSS класс.",
+      "type": "string"
+    },
+    "label": {
+      "description": "Текст метки радио-кнопки.",
+      "type": "string",
+      "default": ""
+    }
+  },
+  "title": "RadioProps",
+  "type": "object",
+  "required": []
+},
+{
+  "ISelectOption": {
+    "description": "Опция для выбора в компоненте Select.",
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "Уникальное значение опции.",
+        "type": "string"
+      },
+      "label": {
+        "description": "Отображаемый текст опции.",
+        "oneOf": [
+          {
+            "type": "string",
+            "description": "Отображаемый текст опции в виде строки."
+          },
+          {
+            "type": "object",
+            "description": "Отображаемый текст опции в виде React элемента."
+          }
+        ]
+      },
+      "subLabel": {
+        "description": "Описание опции.",
+        "type": "string",
+        "default": ""
+      },
+      "disabled": {
+        "description": "Отключена ли опция.",
+        "type": "boolean",
+        "default": false
+      },
+      "iconLeft": {
+        "description": "Иконка слева от опции.",
+        "type": "object",
+        "default": null
+      },
+      "iconRight": {
+        "description": "Иконка справа от опции.",
+        "type": "object",
+        "default": null
+      },
+      "options": {
+        "description": "Дочерние опции для вложенного выбора.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ISelectOption"
+        },
+        "default": []
+      },
+      "additionalProperties": {
+        "description": "Дополнительные свойства опции.",
+        "type": "object"
+      }
+    },
+    "required": ["value", "label"]
+  },
+  "title": "ISelectOption",
+  "type": "object"
+},
+{
+  "ISidebarProps": {
+    "description": "Свойства для компонента Sidebar.",
+    "type": "object",
+    "properties": {
+      "orientation": {
+        "description": "Ориентация боковой панели.",
+        "type": "string",
+        "enum": ["vertical", "horizontal"],
+        "default": "vertical"
+      },
+      "variant": {
+        "description": "Вариант боковой панели.",
+        "type": "string",
+        "enum": ["default", "burger"],
+        "default": "default"
+      },
+      "allowFavorites": {
+        "description": "Разрешить отображение избранных элементов.",
+        "type": "boolean",
+        "default": false
+      },
+      "isLoggedIn": {
+        "description": "Флаг, указывающий, выполнен ли вход.",
+        "type": "boolean",
+        "default": false
+      },
+      "systemName": {
+        "description": "Название системы.",
+        "type": "string",
+        "default": ""
+      },
+      "userName": {
+        "description": "Имя пользователя.",
+        "type": "string",
+        "default": ""
+      },
+      "userSurname": {
+        "description": "Фамилия пользователя.",
+        "type": "string",
+        "default": ""
+      },
+      "onOpenUser": {
+        "description": "Функция для открытия пользовательского меню.",
+        "type": "function",
+        "default": "() => {}"
+      },
+      "onLogout": {
+        "description": "Функция для выхода из системы.",
+        "type": "function",
+        "default": "() => {}"
+      },
+      "onLogin": {
+        "description": "Функция для входа в систему.",
+        "type": "function",
+        "default": "() => {}"
+      },
+      "onSearch": {
+        "description": "Функция для поиска.",
+        "type": "function",
+        "default": "() => {}"
+      },
+      "onClickLogo": {
+        "description": "Функция для клика по логотипу.",
+        "type": "function",
+        "default": "() => {}"
+      },
+      "currentPath": {
+        "description": "Текущий путь в навигации.",
+        "type": "string"
+      }
+    },
+    "required": ["onOpenUser", "currentPath"]
+  },
+  "title": "ISidebarProps",
+  "type": "object"
+},
+{
+  "ISelectProps": {
+    "description": "Свойства для компонента Select.",
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "Значение селекта.",
+        "type": "string",
+        "oneOf": [
+          {"type": "string"},
+          {"type": "number"}
+        ]
+      },
+      "onChange": {
+        "description": "Обработчик изменения значения селекта.",
+        "type": "function",
+        "default": "() => {}"
+      },
+      "id": {
+        "description": "Идентификатор компонента.",
+        "type": "string"
+      },
+      "portalContainerId": {
+        "description": "id рутового контейнера для создания портала.",
+        "type": "string"
+      },
+      "children": {
+        "description": "Дочерние элементы селекта (опции меню).",
+        "type": "array",
+        "items": {
+          "type": "node"
+        }
+      },
+      "menuWidth": {
+        "description": "Ширина меню селекта.",
+        "type": "string"
+      },
+      "placeholder": {
+        "description": "Плейсхолдер для инпута селекта.",
+        "type": "string"
+      },
+      "label": {
+        "description": "Лейбл инпута в селекте.",
+        "type": "string"
+      },
+      "withPortal": {
+        "description": "Флаг, указывающий, должно ли меню рендериться в портале.",
+        "type": "boolean",
+        "default": false
+      },
+      "disabled": {
+        "description": "Флаг доступности селекта.",
+        "type": "boolean",
+        "default": false
+      },
+      "onBlur": {
+        "description": "Обработчик закрытия меню options.",
+        "type": "function"
+      },
+      "onFocus": {
+        "description": "Обработчик открытия меню options.",
+        "type": "function"
+      },
+      "color": {
+        "description": "Цвет компонента.",
+        "type": "string",
+        "enum": [
+          "action",
+          "disabled",
+          "error",
+          "primary",
+          "secondary",
+          "inherit",
+          "success",
+          "warning",
+          "default"
+        ]
+      },
+      "size": {
+        "description": "Размер компонента.",
+        "type": "string",
+        "enum": ["small", "medium", "large"]
+      },
+      "scrollingItems": {
+        "description": "Количество элементов после которого включается прокрутка.",
+        "type": "number"
+      },
+      "noOptionsText": {
+        "description": "Текст, отображаемый когда нет доступных опций.",
+        "type": "string"
+      },
+      "searchable": {
+        "description": "Флаг, указывающий, доступен ли поиск.",
+        "type": "boolean",
+        "default": false
+      },
+      "name": {
+        "description": "name определяет имя элемента, используется для ссылки на элемент.",
+        "type": "string"
+      },
+      "onEnterPress": {
+        "description": "Обработчик нажатия клавиши Enter.",
+        "type": "function"
+      },
+      "style": {
+        "description": "Кастомные стили для компонента.",
+        "type": "object",
+        "properties": {
+          "backgroundColor": { "type": "string" },
+          "border": { "type": "string" },
+          "borderRadius": { "type": "string" },
+          "color": { "type": "string" }
+        }
+      },
+      "className": {
+        "description": "Добавление самостоятельного CSS класса.",
+        "type": "string"
+      },
+      "colored": {
+        "description": "Флаг применения цветовых стилей.",
+        "type": "boolean",
+        "default": false
+      },
+      "reset": {
+        "description": "Флаг наличия кнопки сброса.",
+        "type": "boolean",
+        "default": false
+      },
+      "onReset": {
+        "description": "Обработчик сброса значения.",
+        "type": "function"
+      }
+    },
+    "required": ["children"]
+  },
+  "title": "ISelectProps",
+  "type": "object"
+},
+{
+  "ISkeletonLoading": {
+    "description": "Свойства для компонента SkeletonLoading.",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Идентификатор компонента.",
+        "type": "string"
+      },
+      "className": {
+        "description": "Дополнительный CSS класс.",
+        "type": "string"
+      },
+      "count": {
+        "description": "Количество скелетонов для отображения.",
+        "type": "number",
+        "default": 1
+      },
+      "width": {
+        "description": "Ширина скелетона.",
+        "type": "string"
+      },
+      "height": {
+        "description": "Высота скелетона.",
+        "type": "string"
+      }
+    },
+    "required": [],
+    "default": {
+      "count": 1
+    },
+    "title": "ISkeletonLoading"
+  }
+}
+{
+  "ISkeletonLoading": {
+    "description": "Свойства для компонента SkeletonLoading.",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Идентификатор компонента.",
+        "type": "string"
+      },
+      "className": {
+        "description": "Дополнительный CSS класс.",
+        "type": "string"
+      },
+      "count": {
+        "description": "Количество скелетонов для отображения.",
+        "type": "number",
+        "default": 1
+      },
+      "width": {
+        "description": "Ширина скелетона.",
+        "type": "string"
+      },
+      "height": {
+        "description": "Высота скелетона.",
+        "type": "string"
+      }
+    },
+    "required": [],
+    "default": {
+      "count": 1
+    },
+    "title": "ISkeletonLoading"
+  }
+},
+{
+  "definitions": {
+    "ESizeMapping": {
+      "description": "Размер компонента SlideToggle.",
+      "type": "string",
+      "enum": [
+        "compact",
+        "default"
+      ],
+      "default": "default"
+    }
+  },
+  "ISlideToggleProps": {
+    "description": "Свойства для компонента SlideToggle.",
+    "type": "object",
+    "properties": {
+      "title": {
+        "description": "Заголовок компонента SlideToggle.",
+        "type": "string",
+        "oneOf": [
+          { "type": "string" },
+          { "type": "string", "format": "JSX.Element" }
+        ]
+      },
+      "after": {
+        "description": "Содержимое, отображаемое после заголовка.",
+        "type": "string",
+        "format": "ReactNode"
+      },
+      "isShow": {
+        "description": "Флаг, указывающий, отображается ли контент.",
+        "type": "boolean"
+      },
+      "onToggle": {
+        "description": "Функция обратного вызова для переключения состояния.",
+        "type": "function"
+      },
+      "toggleContainerShadow": {
+        "description": "Флаг, указывающий, отображать ли тень контейнера.",
+        "type": "boolean"
+      },
+      "className": {
+        "description": "Дополнительный CSS класс.",
+        "type": "string"
+      },
+      "size": {
+        "description": "Размер компонента SlideToggle.",
+        "type": "string",
+        "enum": ["compact", "default"],
+        "default": "default"
+      },
+      "iconWrapperId": {
+        "description": "ID элемента обертки иконки.",
+        "type": "string"
+      },
+      "titleWrapperId": {
+        "description": "ID элемента обертки заголовка.",
+        "type": "string"
+      },
+      "afterWrapperId": {
+        "description": "ID элемента обертки после заголовка.",
+        "type": "string"
+      },
+      "contentWrapperId": {
+        "description": "ID элемента обертки содержимого.",
+        "type": "string"
+      }
+    },
+    "required": [
+      "title",
+      "isShow"
+    ],
+    "title": "ISlideToggleProps"
+  }
 }
 ]

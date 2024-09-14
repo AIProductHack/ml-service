@@ -1,4 +1,4 @@
-from typing import TypeAlias, Union
+from typing import TypeAlias, Union, Optional
 from pydantic import BaseModel
 from typing import Any
 
@@ -31,3 +31,4 @@ Components: TypeAlias = Union[
 
 class GenerationResponse(BaseModel):
     data: list[dict[str, Any]] = []
+    css: Optional[str] = None

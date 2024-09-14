@@ -13,7 +13,7 @@ router = APIRouter(prefix="/generation", tags=["generation"])
 @router.post("/from_text", status_code=200, response_model=GenerationResponse)
 def generate_from_text(
     text: str,
-    generator_type: GeneratorType = GeneratorType.GIGACHAT
+    generator_type: GeneratorType = GeneratorType.CHATGPT
 ):
     model = GeneratorFactory.get_generator(generator_type.value)
     try:
@@ -23,10 +23,11 @@ def generate_from_text(
         model.refresh_token()
     finally:
         response = model.call_api(text)
-    response = response.replace("\n", "")
+    print(response)
     try:
-        result = json.loads(response)
-        return GenerationResponse(data=result)
+        components = response[0]
+        css = response[1]
+        return GenerationResponse(data=components, css=css)
     except:
         return GenerationResponse()
 
